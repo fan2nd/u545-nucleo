@@ -1,0 +1,16 @@
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+# replace STM32U5G9ZJTxQ with your chip as listed in `probe-rs chip list`
+runner = "probe-rs run --chip STM32U545RE"
+
+[build]
+target = "thumbv8m.main-none-eabihf"
+
+[env]
+DEFMT_LOG = "trace"
+
+[profile.release]
+codegen-units = 1       # better optimizations
+debug = 2            # no overhead for bare-metal
+opt-level = "z"         # optimize for binary size
+overflow-checks = false
+lto = "fat"
