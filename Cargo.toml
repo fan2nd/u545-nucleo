@@ -13,8 +13,10 @@ cortex-m-rt = "0.7.0"
 defmt = "1.0.1"
 defmt-rtt = "1.0.0"
 embassy-executor = { git = "https://github.com/embassy-rs/embassy.git", features = [
+    "defmt",
     "arch-cortex-m",
     "executor-thread",
+    "executor-interrupt"
 ] }
 embassy-sync = { git = "https://github.com/embassy-rs/embassy.git" }
 embassy-futures = { git = "https://github.com/embassy-rs/embassy.git" }

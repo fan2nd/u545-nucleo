@@ -259,6 +259,7 @@ dependencies = [
  "cordyceps",
  "cortex-m",
  "critical-section",
+ "defmt",
  "document-features",
  "embassy-executor-macros",
  "embassy-executor-timer-queue",
