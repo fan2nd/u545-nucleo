@@ -369,6 +369,7 @@ source = "git+https://github.com/embassy-rs/embassy.git#194a721d0eab929a2af0a2a4
 dependencies = [
  "cfg-if",
  "critical-section",
+ "defmt",
  "document-features",
  "embassy-time-driver",
  "embedded-hal 0.2.7",
@@ -596,6 +597,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f5e54036fe321fd421e10d732f155734c4e4afd610dd556d9a82833ab3ee0bed"
 
 [[package]]
+name = "lm75"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "430c2d95694c3f32c3ed0cd2f91e07c8a2935ca55697f174d9060a9eefa0ddf0"
+dependencies = [
+ "embedded-hal 1.0.0",
+]
+
+[[package]]
 name = "log"
 version = "0.4.28"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -675,6 +685,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fd402d00b0fb94c5aee000029204a46884b1262e0c443f166d86d2c0747e1a1a"
 dependencies = [
  "cortex-m",
+ "defmt",
 ]
 
 [[package]]
@@ -971,7 +982,11 @@ dependencies = [
  "embassy-stm32",
  "embassy-sync",
  "embassy-time",
+ "embedded-hal 1.0.0",
+ "embedded-hal-async",
  "embedded-io-async",
+ "heapless 0.9.1",
+ "lm75",
  "panic-probe",
 ]
 
