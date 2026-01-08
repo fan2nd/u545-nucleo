@@ -33,3 +33,5 @@ embedded-hal-async = "1.0.0"
 panic-probe = { version = "1.0.0", features = ["print-defmt"] }
 lm75 = "1.0.0"
 heapless = "0.9.1"
+embedded-cli = "0.2.1"
+ufmt = "0.2.0"
