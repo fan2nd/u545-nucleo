@@ -318,7 +318,7 @@ pub fn i2c_scan<T: I2c>(i2c: &mut T) -> Vec<u8, 128> {
     let mut addr_set = Vec::new();
     for addr in 0..128 {
         // Skip reserved addresses (0x00-0x07 and 0x78-0x7F)
-        if (addr <= 0x07) || (addr >= 0x78 && addr <= 0x7F) {
+        if (addr <= 0x07) || (0x78..=0x7F).contains(&addr) {
             continue;
         }
 

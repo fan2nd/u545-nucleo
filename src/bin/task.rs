@@ -11,7 +11,7 @@ async fn main(spawner: Spawner) {
     let _ = embassy_stm32::init(Default::default());
     info!("Hello World!");
     for i in 1..=3 {
-        let _ = spawner.spawn(hello(i).unwrap());
+        spawner.spawn(hello(i).unwrap());
     }
 }
 

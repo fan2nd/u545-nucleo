@@ -31,9 +31,8 @@ async fn main(_spawner: Spawner) -> ! {
         config,
     )
     .unwrap();
-    let (mut tx, rx) = uart.split();
+    let (tx, rx) = uart.split();
     let mut rx = rx.into_ring_buffered(&mut rx_buffer);
-    let mut buffer = [0u8; 32];
 
     let mut cli = CliBuilder::default()
         .prompt("Rust> ")
@@ -71,6 +70,8 @@ async fn main(_spawner: Spawner) -> ! {
 
 #[derive(Command)]
 pub enum UserCommand {
+    /// pass a unsigned num
     Unsigned { num: usize },
+    /// pass a signed num
     Signed { num: isize },
 }
