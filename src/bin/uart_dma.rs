@@ -31,7 +31,9 @@ async fn main(_spawner: Spawner) -> ! {
     .unwrap();
     let mut buffer = [0u8; 32];
     loop {
-        if let Ok(len) = uart.read_until_idle(&mut buffer).await {
+        if let Ok(len) = uart.read_until_idle(&mut buffer).await
+            && len > 0
+        {
             info!("{}", &buffer[0..len]);
             uart.write(&buffer[0..len]).await.unwrap()
         }
